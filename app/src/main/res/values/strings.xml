@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">QuizApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="title"><![CDATA[Learn & Explore]]></string>
+    <string name="secondary_text">Learn Programming Basics To Advance</string>
+    <string name="supporting_text">C | C++ | Java | Python</string>
+    <string name="action_1">Start</string>
+    <string name="title2">Online Compiler</string>
+    <string name="secondary_text2"><![CDATA[Compile & Run]]></string>
+    <string name="title3">Take Quiz</string>
+    <string name="secondary_text3">Attempt Quiz</string>
+    <string name="supporting_text3"><![CDATA[Show Your Skills & Attempt Quiz]]></string>
+    <string name="secondary_text4">Top Resources For Coder</string>
+    <string name="title4">Resources</string>
+    <string name="category1">Learn Programming</string>
+    <string name="title5"><![CDATA[Tips & Tricks]]></string>
+    <string name="secondary_text5"><![CDATA[Tips & Tricks For Coder]]></string>
+    <string name="quote">Quote</string>
+
+
+</resources>
