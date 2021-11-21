@@ -3,30 +3,56 @@
     package="com.lifetimelearner.quizapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/coding_app_logo_2"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/coding_app_logo_2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.main.MainActivity"
+
+        <activity
+            android:name=".ui.splash.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.blogtopic.BlogTopicActivity" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3341551705792260~6664621013" />
+
+        <activity
+            android:name=".ui.question.SubQuestionActivity"
+            android:label="Questions" />
+        <activity
+            android:name=".ui.quiz.ObjQuizActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.code.ProblemActivity"
+            android:label="Program" />
+        <activity
+            android:name=".ui.code.CodeActivity"
+            android:label="Code" />
+        <activity
+            android:name=".ui.code.ProgramActivity"
+            android:label="Choose Category" />
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".ui.blog.WebViewActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.blog.BlogActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

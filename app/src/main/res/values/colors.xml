@@ -6,6 +6,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="lightWhite">#60ffffff</color>
     <color name="toggleDark">#000000</color>
+    <color name="lightToggleDark">#80000000</color>
+    <color name="lightSameDark">#60ffffff</color>
+    <color name="skipBtnBG">#616161</color>
 
     <!--colors for modern ui-->
     <color name="whiteTextColor">#fff</color>
@@ -20,5 +23,13 @@
     <color name="bgFriend">#16577C</color>
     <color name="sameDark">#FFFFFF</color>
 
+    <!-- code color -->
+    <color name="keyword">#0430A8</color>
+    <color name="comment">#097E0F</color>
+    <color name="semicolon">#A86904</color>
+
+    <!-- question color -->
+    <color name="correct">#64dd17</color>
+    <color name="incorrect">#e53935</color>
 
 </resources>

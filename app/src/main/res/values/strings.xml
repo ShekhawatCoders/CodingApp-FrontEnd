@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">QuizApp</string>
+    <string name="app_name">Coding App</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">Home</string>
@@ -18,6 +18,18 @@
     <string name="title5"><![CDATA[Tips & Tricks]]></string>
     <string name="secondary_text5"><![CDATA[Tips & Tricks For Coder]]></string>
     <string name="quote">Quote</string>
+    <string name="basics">Basics</string>
+    <string name="question_answer"><![CDATA[Question & Answer]]></string>
+    <string name="demo_text">Demo text for debugging</string>
+    <string name="time_remaining">Time Remaining</string>
+    <string name="end_quiz">End Quiz</string>
+    <string name="skip_btn">Skip</string>
+    <string name="continue_btn">Continue</string>
+    <string name="login_signup_hint">SignUp here</string>
+    <string name="login_email_hint">Enter email</string>
+    <string name="login_password_hint">Enter password</string>
+    <string name="register">Register</string>
+    <string name="signup_login_hint">Login Here</string>
 
 
 </resources>

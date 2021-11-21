@@ -22,26 +22,24 @@ class BlogRecyclerAdapter(private val context: Context, private var blogList: Ar
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.show_blog_layout, parent, false)
+            .inflate(R.layout.card_blog, parent, false)
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val blog = blogList[position]
-        holder.itemView.findViewById<TextView>(R.id.blog_title).text = "${position + 1}. ${blog.blogTitle}"
-        holder.itemView.findViewById<TextView>(R.id.blog_desc).text = blog.blogDesc
+        holder.itemView.findViewById<TextView>(R.id.blog_title).text = blog.blogTitle.trim()
+        holder.itemView.findViewById<TextView>(R.id.blog_desc).text = blog.blogDesc.trim()
         val chipGroup = holder.itemView.findViewById<ChipGroup>(R.id.blog_tag)
-        val tokens = blog.blogTag.split(",")
+        val tokens = blog.blogTags.split(",")
         for(token in tokens) {
             token.trim()
-            if(token.isEmpty()) continue
+            if(token.isEmpty() || token == "resources") continue
             val chip = Chip(context)
             chip.text = token
             chipGroup.addView(chip)
         }
         holder.itemView.setOnClickListener {
-            Log.d("LOGGING", blog.blogUrl)
-            Log.d("LOGGING", position.toString())
             val intent = Intent(context, WebViewActivity::class.java)
             intent.putExtra("BLOG_URL", blog.blogUrl)
             context.startActivity(intent)

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "30819904348",
+    "project_id": "hwcodingapp",
+    "storage_bucket": "hwcodingapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:30819904348:android:9348db9c8e428aedfdaf99",
+        "android_client_info": {
+          "package_name": "com.lifetimelearner.quizapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "30819904348-ckfqvotllftecpn61oitiqob33fjg5qi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD55ohcYhpBuDa3A3f8gGKJrfmr-hldhU4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "30819904348-ckfqvotllftecpn61oitiqob33fjg5qi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

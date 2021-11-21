@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_sub_main"
+    app:cardElevation="0dp"
+    android:layout_margin="10dp"
+    android:paddingStart="6dp"
+    android:paddingEnd="6dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:paddingTop="8dp"
+            android:paddingStart="8dp"
+            android:text="Question"
+            android:id="@+id/card_sub_hint_question"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/card_sub_question"
+            android:drawableRight="@drawable/expand_more"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="8dp"
+            android:layout_below="@id/card_sub_hint_question"
+            android:text="This is subjective type question"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:paddingStart="8dp"
+            android:paddingBottom="8dp"
+            android:text="Show Answer"
+            android:layout_below="@id/card_sub_question"
+            android:id="@+id/card_sub_show_answer_hint"
+            />
+
+        <RelativeLayout
+            android:id="@+id/card_sub_show_answer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/card_sub_show_answer_hint"
+            android:visibility="gone">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/card_sub_answer"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:textColor="?android:attr/textColorSecondary"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="8dp"
+                android:text="you need to answer in minimum 3 words without a wrong submission"
+                />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,75 +1,75 @@
 package com.lifetimelearner.quizapp.ui.main
 
 import android.os.Bundle
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.navigation.NavController
-import androidx.navigation.Navigation
-import androidx.navigation.ui.NavigationUI
-import com.google.android.material.navigation.NavigationView
+import com.google.gson.GsonBuilder
 import com.lifetimelearner.quizapp.R
+import com.lifetimelearner.quizapp.model.Code
+import com.lifetimelearner.quizapp.model.Problem
+import com.lifetimelearner.quizapp.room.AppDatabase
+import com.lifetimelearner.quizapp.utils.OkHttpSingleton
+import okhttp3.Call
+import okhttp3.Response
+import java.io.IOException
 
-
-class MainActivity : AppCompatActivity(),
-    NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var toolbar: Toolbar
-    private lateinit var drawerLayout: DrawerLayout
-    private lateinit var navController: NavController
-    private lateinit var navigationView: NavigationView
+    private lateinit var database : AppDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        setupNavigation()
+        database = AppDatabase.getInstance(applicationContext)
+
+
+        // schedule for downloading content
 
     }
 
+    private fun loadAllCode() {
+        // now it is time to show questions here
+        val url = "https://quiz-app-7663.herokuapp.com/allCode"
+        OkHttpSingleton.getClient().newCall(OkHttpSingleton.getRequest(url)).enqueue(
+            object : okhttp3.Callback {
+                override fun onFailure(call: Call, e: IOException) {
+                }
 
-    // Setting Up One Time Navigation
-    private fun setupNavigation() {
-        toolbar = findViewById(R.id.main_toolbar)
-        setSupportActionBar(toolbar)
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        supportActionBar!!.setDisplayShowHomeEnabled(true)
-        drawerLayout = findViewById(R.id.main_drawer_layout)
-        navigationView = findViewById(R.id.navigationView)
-        navController = Navigation.findNavController(this, R.id.nav_host_fragment)
-        NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
-        NavigationUI.setupWithNavController(navigationView, navController)
-        navigationView.setNavigationItemSelectedListener(this)
-
+                override fun onResponse(call: Call, response: Response) {
+                    var result = response.body!!.string()
+                    val gson = GsonBuilder().create()
+                    val resultArray = gson.fromJson(result, Array<Code>::class.java).toList()
+                    if(!resultArray.isNullOrEmpty())
+                        database.appDao().insertCodes(resultArray)
+                }
+            }
+        )
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        return NavigationUI.navigateUp(
-            Navigation.findNavController(this, R.id.nav_host_fragment),
-                drawerLayout)
+    private fun loadAllProblem() {
+        // now it is time to show questions here
+        val url = "https://quiz-app-7663.herokuapp.com/allProblem";
+        OkHttpSingleton.getClient().newCall(OkHttpSingleton.getRequest(url)).enqueue(
+            object : okhttp3.Callback {
+                override fun onFailure(call: Call, e: IOException) {
+                }
+
+                override fun onResponse(call: Call, response: Response) {
+                    var result = response.body!!.string()
+                    val gson = GsonBuilder().create()
+                    val resultArray = gson.fromJson(result, Array<Problem>::class.java).toList()
+                    if(!resultArray.isNullOrEmpty())
+                        database.appDao().insertProblems(resultArray)
+                }
+            }
+        )
     }
 
     override fun onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
-        }
+        finish()
+        // super.onBackPressed()
     }
 
-    override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
-        menuItem.isChecked = true
-        drawerLayout.closeDrawers()
-        val id: Int = menuItem.getItemId()
-        /*
-        when (id) {
-            R.id.first -> navController.navigate(R.id.firstFragment)
-            R.id.second -> navController.navigate(R.id.secondFragment)
-            R.id.third -> navController.navigate(R.id.thirdFragment)
-        }
-        */
-        return true
-    }
 }

@@ -22,7 +22,7 @@
         app:repeat_mode="reverse"
         >
 
-        <include layout="@layout/webview_placeholder_layout" />
+        <include layout="@layout/placeholder_layout" />
 
     </com.facebook.shimmer.ShimmerFrameLayout>
 
