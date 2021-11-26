@@ -10,6 +10,14 @@
     android:orientation="vertical"
     >
 
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        htext:adSize="BANNER"
+        htext:adUnitId="ca-app-pub-3940256099942544/6300978111"></com.google.android.gms.ads.AdView>
+
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,7 +25,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/adView"
         >
 
         <androidx.viewpager.widget.PagerTabStrip
@@ -46,16 +54,3 @@
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-<!--
-<com.google.android.gms.ads.AdView
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/adView"
-    android:layout_width="match_parent"
-    android:layout_margin="4dp"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    ads:adSize="BANNER"
-    ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
-</com.google.android.gms.ads.AdView>-->

@@ -12,14 +12,17 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import com.lifetimelearner.quizapp.R
 import com.lifetimelearner.quizapp.ui.main.MainActivity
+import com.lifetimelearner.quizapp.utils.GlobalData
 import com.lifetimelearner.quizapp.viewmodel.SplashViewModel
 
 class LoginFragment : Fragment() {
 
     private lateinit var viewModel : SplashViewModel
+    private lateinit var dialog: AlertDialog
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,9 +41,14 @@ class LoginFragment : Fragment() {
         val loginEmail = view.findViewById<EditText>(R.id.login_email)
         val loginPassword = view.findViewById<EditText>(R.id.login_password)
         val signUpName = view.findViewById<EditText>(R.id.sign_name)
-        val signUpNumber = view.findViewById<EditText>(R.id.sign_number)
         val signUpEmail = view.findViewById<EditText>(R.id.sign_email)
         val signUpPassword = view.findViewById<EditText>(R.id.sign_password)
+
+        dialog = GlobalData.getLoadingDialog(
+            requireActivity(),
+            "Authenticating ...",
+            "Please wait, Good things take time ..."
+        )
 
         viewModel = ViewModelProvider(requireActivity()).get(SplashViewModel::class.java)
 
@@ -62,12 +70,12 @@ class LoginFragment : Fragment() {
                 Toast.makeText(requireActivity(),"Please fill all fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
+            dialog.show()
             viewModel.loginUser(stringEmail, stringPassword)
         }
         signUpButton.setOnClickListener {
             it.hideKeyboard()
             val stringName = signUpName.text.toString()
-            val stringNumber = signUpNumber.text.toString()
             val stringEmail = signUpEmail.text.toString()
             val stringPassword = signUpPassword.text.toString()
             if (stringName.isEmpty() || stringEmail.isEmpty() || stringPassword.isEmpty()) {
@@ -75,13 +83,27 @@ class LoginFragment : Fragment() {
                     .show()
                 return@setOnClickListener
             }
+            dialog.show()
             viewModel.signUpUser(stringName, stringEmail, stringPassword)
         }
+
+        viewModel.loginTry.observe(requireActivity(), {
+            dialog.dismiss()
+        })
+
+        viewModel.loginMessage.observe(requireActivity(), {
+            Toast.makeText(
+                requireActivity(),
+                it,
+                Toast.LENGTH_LONG
+            ).show()
+        })
+
 
         return view
     }
 
-    private fun View.hideKeyboard() {
+     private fun View.hideKeyboard() {
         val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(windowToken, 0)
     }

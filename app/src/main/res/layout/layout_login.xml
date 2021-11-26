@@ -23,8 +23,9 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputEmail"
             style="@style/parent"
-            android:layout_marginTop="@dimen/loginViewsMargin">
-            <EditText
+            android:layout_marginTop="@dimen/loginViewsMargin"
+            app:startIconDrawable="@android:drawable/sym_action_email">
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/login_email"
                 style="@style/modifiedEditText"
                 android:inputType="textEmailAddress"
@@ -35,8 +36,10 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputPassword"
             style="@style/parent"
-            android:layout_marginTop="@dimen/loginViewsMargin">
-            <EditText
+            android:layout_marginTop="@dimen/loginViewsMargin"
+            app:startIconDrawable="@android:drawable/ic_lock_idle_lock"
+            app:endIconMode="password_toggle">
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/login_password"
                 style="@style/modifiedEditText"
                 android:hint="@string/login_password_hint"

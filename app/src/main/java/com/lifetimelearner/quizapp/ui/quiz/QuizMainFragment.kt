@@ -86,6 +86,6 @@ class QuizMainFragment : Fragment() {
         }
         viewPager.currentItem = item
         // set progress bar
-        questionProgress.progress = (item*100)/total
+        questionProgress.progress = ((item+1)*100)/total
     }
 }

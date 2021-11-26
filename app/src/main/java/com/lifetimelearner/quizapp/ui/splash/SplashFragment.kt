@@ -11,6 +11,7 @@ import com.hanks.htextview.base.HTextView
 import com.lifetimelearner.quizapp.R
 import com.lifetimelearner.quizapp.ui.question.SubQuestionActivity
 import com.lifetimelearner.quizapp.utils.GlobalData
+import com.lifetimelearner.quizapp.utils.GlobalData.getTodayQuote
 
 class SplashFragment : Fragment() {
 
@@ -20,6 +21,10 @@ class SplashFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_splash, container, false)
+
+        val quote = getTodayQuote()
+        val textView = view.findViewById<HTextView>(R.id.main_quote)
+        textView.text = quote
 
         return view
 

@@ -1,5 +1,6 @@
 package com.lifetimelearner.quizapp.ui.quiz
 
+import android.content.Context
 import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -15,6 +16,8 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.switchmaterial.SwitchMaterial
 import com.lifetimelearner.quizapp.R
 import com.lifetimelearner.quizapp.viewmodel.QuizViewModel
+import com.lifetimelearner.quizapp.utils.GlobalData.getLoadingDialog
+
 
 class QuizSplashFragment : Fragment() {
 
@@ -33,7 +36,10 @@ class QuizSplashFragment : Fragment() {
         val seekBarText = view.findViewById<TextView>(R.id.quiz_splash_fragment_seek_bar_number)
         val testMode = view.findViewById<SwitchMaterial>(R.id.quiz_splash_fragment_test_mode)
 
-        dialog = getLoadingDialog()
+        dialog = getLoadingDialog(
+            requireActivity(),
+            "Loading Quiz ...",
+            "Please wait, Good things take time ...")
 
         seekBar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
@@ -74,15 +80,6 @@ class QuizSplashFragment : Fragment() {
 
         return view
 
-    }
-
-    private fun getLoadingDialog(): AlertDialog {
-        return AlertDialog.Builder(requireActivity(), R.style.Theme_Design_BottomSheetDialog)
-                .setTitle("Loading Quiz ...")
-                .setMessage("Please wait, Good things take time ...")
-                .setCancelable(false)
-                .setIcon(R.drawable.icon_exit)
-                .create()
     }
 
 }

@@ -11,6 +11,8 @@ import com.google.firebase.ktx.Firebase
 class SplashViewModel: ViewModel() {
 
     val userLogin = MutableLiveData<Boolean>()
+    val loginTry = MutableLiveData<Boolean>()
+    val loginMessage = MutableLiveData<String>()
 
     fun signUpUser(stringName: String, stringEmail: String, stringPassword: String) {
         Firebase.auth.createUserWithEmailAndPassword(stringEmail, stringPassword)
@@ -18,9 +20,11 @@ class SplashViewModel: ViewModel() {
                 if(it.isSuccessful) {
                     userLogin.postValue(true)
                 }
+                loginTry.postValue(true)
             }
             .addOnFailureListener {
-                Log.d("LOGGING", it.message)
+                loginTry.postValue(true)
+                loginMessage.postValue(it.message)
             }
     }
 
@@ -30,9 +34,11 @@ class SplashViewModel: ViewModel() {
                 if(it.isSuccessful) {
                     userLogin.postValue(true)
                 }
+                loginTry.postValue(true)
             }
             .addOnFailureListener {
-                Log.d("LOGGING", it.message)
+                loginTry.postValue(true)
+                loginMessage.postValue(it.message)
             }
     }
 

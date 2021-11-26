@@ -153,8 +153,8 @@ class ObjQuestionRecyclerAdapter(private val context: Context, private var quest
             4 -> clearButton(optionD)
         }
 
-        // If pressed the same button
-        if(curr == viewModel.repository.answers[position]) return
+        // pressed the same button ( no rotation )
+        if(sound && curr == viewModel.repository.answers[position]) return
 
         // store answer
         viewModel.repository.answers[position] = curr

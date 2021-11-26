@@ -1,5 +1,8 @@
 package com.lifetimelearner.quizapp.utils
 
+import android.content.Context
+import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.FragmentActivity
 import com.lifetimelearner.quizapp.R
 import com.lifetimelearner.quizapp.model.Blog
 import com.lifetimelearner.quizapp.model.Program
@@ -107,6 +110,19 @@ object GlobalData {
                 "",
                 ""))
         return topPickList
+    }
+
+    fun getLoadingDialog(
+        context: Context,
+        title: String,
+        message: String
+    ): AlertDialog {
+        return AlertDialog.Builder(context, R.style.Theme_Design_BottomSheetDialog)
+            .setTitle(title)
+            .setMessage(message)
+            .setCancelable(false)
+            .setIcon(R.drawable.icon_exit)
+            .create()
     }
 
 }

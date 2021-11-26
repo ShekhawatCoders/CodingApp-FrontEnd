@@ -7,14 +7,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager.widget.ViewPager
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import com.google.android.material.progressindicator.CircularProgressIndicator
 import com.lifetimelearner.quizapp.R
 import com.lifetimelearner.quizapp.adapter.CodePagerAdapter
-import com.lifetimelearner.quizapp.adapter.CodeRecyclerAdapter
 import com.lifetimelearner.quizapp.viewmodel.CodeViewModel
 
 class CodeActivity : AppCompatActivity() {
-
 
     private lateinit var progressBar: CircularProgressIndicator
 
@@ -22,11 +23,11 @@ class CodeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_code)
 
-        /*MobileAds.initialize(this) {}
+        MobileAds.initialize(this) {}
 
         val mAdView = findViewById<AdView>(R.id.adView)
         val adRequest = AdRequest.Builder().build()
-        mAdView.loadAd(adRequest)*/
+        mAdView.loadAd(adRequest)
 
         progressBar = findViewById(R.id.code_progress_bar)
         progressBar.show()
@@ -54,13 +55,13 @@ class CodeActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
-        menuInflater.inflate(R.menu.code_menu, menu)
+        menuInflater.inflate(R.menu.main_menu, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
-            R.id.enable_dark_mode-> {
+            R.id.dark_mode-> {
                 if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                 else
