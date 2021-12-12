@@ -3,10 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/visha/OneDrive/Desktop/App/QuizApp/app/src/main/res/drawable/arrow_back.xml" value="0.14791666666666667" />
+        <entry key="..\:/Users/visha/OneDrive/Desktop/App/QuizApp/app/src/main/res/drawable/arrow_next.xml" value="0.14791666666666667" />
+        <entry key="..\:/Users/visha/OneDrive/Desktop/App/QuizApp/app/src/main/res/drawable/expand_more.xml" value="0.14791666666666667" />
+        <entry key="..\:/Users/visha/OneDrive/Desktop/App/QuizApp/app/src/main/res/drawable/icon_play.xml" value="0.14791666666666667" />
+        <entry key="..\:/Users/visha/OneDrive/Desktop/App/QuizApp/app/src/main/res/drawable/icon_quote.xml" value="0.14791666666666667" />
+        <entry key="..\:/Users/visha/OneDrive/Desktop/App/QuizApp/app/src/main/res/drawable/icon_radio_fill.xml" value="0.14791666666666667" />
+        <entry key="..\:/Users/visha/OneDrive/Desktop/App/QuizApp/app/src/main/res/drawable/icon_saved.xml" value="0.14791666666666667" />
+        <entry key="..\:/Users/visha/OneDrive/Desktop/App/QuizApp/app/src/main/res/drawable/icon_share.xml" value="0.14791666666666667" />
+        <entry key="..\:/Users/visha/OneDrive/Desktop/App/QuizApp/app/src/main/res/drawable/icon_shield.xml" value="0.14791666666666667" />
+        <entry key="..\:/Users/visha/OneDrive/Desktop/App/QuizApp/app/src/main/res/drawable/icon_star_rate.xml" value="0.14791666666666667" />
+        <entry key="..\:/Users/visha/OneDrive/Desktop/App/QuizApp/app/src/main/res/drawable/like_button.xml" value="0.14791666666666667" />
+        <entry key="..\:/Users/visha/OneDrive/Desktop/App/QuizApp/app/src/main/res/drawable/login_button_bk.xml" value="0.14791666666666667" />
         <entry key="..\:/Users/visha/OneDrive/Desktop/App/QuizApp/app/src/main/res/drawable/login_shape_bk.xml" value="0.1504885993485342" />
+        <entry key="..\:/Users/visha/OneDrive/Desktop/App/QuizApp/app/src/main/res/drawable/right_mark.xml" value="0.14791666666666667" />
+        <entry key="..\:/Users/visha/OneDrive/Desktop/App/QuizApp/app/src/main/res/drawable/waving_hand_24.xml" value="0.14791666666666667" />
+        <entry key="..\:/Users/visha/OneDrive/Desktop/App/QuizApp/app/src/main/res/drawable/wrong_answer_1.xml" value="0.14791666666666667" />
+        <entry key="..\:/Users/visha/OneDrive/Desktop/App/QuizApp/app/src/main/res/drawable/wrong_mark.xml" value="0.14791666666666667" />
         <entry key="..\:/Users/visha/OneDrive/Desktop/App/QuizApp/app/src/main/res/layout/activity_code.xml" value="0.12291666666666666" />
         <entry key="..\:/Users/visha/OneDrive/Desktop/App/QuizApp/app/src/main/res/layout/activity_main.xml" value="0.12291666666666666" />
         <entry key="..\:/Users/visha/OneDrive/Desktop/App/QuizApp/app/src/main/res/layout/activity_problem.xml" value="0.12291666666666666" />
+        <entry key="..\:/Users/visha/OneDrive/Desktop/App/QuizApp/app/src/main/res/layout/activity_run_code.xml" value="0.18" />
+        <entry key="..\:/Users/visha/OneDrive/Desktop/App/QuizApp/app/src/main/res/layout/activity_web_view.xml" value="0.11597222222222223" />
+        <entry key="..\:/Users/visha/OneDrive/Desktop/App/QuizApp/app/src/main/res/layout/card_code.xml" value="0.11388888888888889" />
+        <entry key="..\:/Users/visha/OneDrive/Desktop/App/QuizApp/app/src/main/res/layout/fragment_code.xml" value="0.11388888888888889" />
         <entry key="..\:/Users/visha/OneDrive/Desktop/App/QuizApp/app/src/main/res/layout/fragment_login.xml" value="0.12291666666666666" />
         <entry key="..\:/Users/visha/OneDrive/Desktop/App/QuizApp/app/src/main/res/layout/fragment_splash.xml" value="0.14" />
         <entry key="..\:/Users/visha/OneDrive/Desktop/App/QuizApp/app/src/main/res/layout/layout_login.xml" value="0.22" />

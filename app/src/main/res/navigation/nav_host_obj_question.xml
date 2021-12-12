@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host_quiz"
+    app:startDestination="@id/quizSplashFragment">
+
+    <fragment
+        android:id="@+id/quizSplashFragment"
+        android:name="com.codeLearningApp.coding.ui.objQuestion.QuizSplashFragment"
+        android:label="fragment_quiz_splash"
+        tools:layout="@layout/fragment_obj_question_splash" >
+        <action
+            android:id="@+id/quizSplashFragment_to_quizMainFragment"
+            app:destination="@id/quizMainFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/quizMainFragment"
+        android:name="com.codeLearningApp.coding.ui.objQuestion.QuizMainFragment"
+        android:label="fragment_quiz_main"
+        tools:layout="@layout/fragment_obj_question_main" >
+        <action
+            android:id="@+id/quizMainFragment_to_quizResultFragment"
+            app:destination="@id/quizResultFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/quizResultFragment"
+        android:name="com.codeLearningApp.coding.ui.objQuestion.QuizResultFragment"
+        android:label="fragment_quiz_result"
+        tools:layout="@layout/fragment_obj_question_result" >
+        <action
+            android:id="@+id/quizResultFragment_to_quizMainFragment"
+            app:destination="@id/quizMainFragment" />
+        <action
+            android:id="@+id/quizResultFragment_to_quizSplashFragment"
+            app:destination="@id/quizSplashFragment" />
+    </fragment>
+
+</navigation>

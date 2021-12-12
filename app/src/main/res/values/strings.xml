@@ -30,6 +30,8 @@
     <string name="login_password_hint">Enter password</string>
     <string name="register">Register</string>
     <string name="signup_login_hint">Login Here</string>
+    <string name="banner_test_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3341551705792260/3655314290</string>
 
 
 </resources>

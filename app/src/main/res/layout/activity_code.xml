@@ -1,31 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:htext="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.code.CodeActivity"
-    android:orientation="vertical"
-    >
+    tools:context=".ui.code.CodeActivity">
 
     <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        htext:adSize="BANNER"
-        htext:adUnitId="ca-app-pub-3940256099942544/6300978111"></com.google.android.gms.ads.AdView>
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id" />
+
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/code_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        app:trackThickness="5dp"
+        app:trackCornerRadius="10dp"
+        app:indicatorColor="@color/toggleDark"
+        android:indeterminateBehavior="cycle"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        />
 
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/code_view_pager"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/adView"
+        android:layout_above="@id/adView"
         >
 
         <androidx.viewpager.widget.PagerTabStrip
@@ -38,19 +48,4 @@
 
     </androidx.viewpager.widget.ViewPager>
 
-    <com.google.android.material.progressindicator.CircularProgressIndicator
-        android:id="@+id/code_progress_bar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:indeterminate="true"
-        app:trackThickness="5dp"
-        app:trackCornerRadius="10dp"
-        app:indicatorColor="@color/toggleDark"
-        android:indeterminateBehavior="cycle"
-        />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

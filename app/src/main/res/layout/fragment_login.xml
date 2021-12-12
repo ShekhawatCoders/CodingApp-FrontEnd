@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     style="@style/loginParent"
-    tools:context=".ui.splash.LoginFragment">
+    tools:context=".ui.login.LoginFragment">
 
     <ScrollView
         style="@style/parent">
